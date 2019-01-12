@@ -1,0 +1,17 @@
+from basescript import BaseScript
+
+class {{ class_name }}(BaseScript):
+    def define_args(self, parser):
+        {% for arg in args -%}
+        {% if arg['help'] is not none -%}
+        parser.add_argument('-{{ arg['name'] }}', '--{{ arg['extended_name']  }}', type={{ arg['type'] }}, required={{ arg['required'] }}, help='{{ arg['help'] }}')
+        {% else -%}
+        parser.add_argument('-{{ arg['name'] }}', '--{{ arg['extended_name']  }}', type={{ arg['type'] }}, required={{ arg['required'] }})
+        {%- endif %}
+        {%- endfor %}
+
+    def run(self):
+        pass
+
+if __name__ == '__main__':
+    {{class_name}}().start()

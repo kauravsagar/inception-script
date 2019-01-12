@@ -1,0 +1,13 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+basescript = "==0.2.9"
+"jinja2" = "==2.10"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
